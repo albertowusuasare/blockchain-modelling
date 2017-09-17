@@ -6,11 +6,13 @@ apply plugin: 'project-report'
 apply plugin: 'java'
 apply plugin: 'groovy'
 
+
 sourceCompatibility = 1.8
 
 repositories {
     mavenCentral()
 }
+
 
 test {
     testLogging {
@@ -34,6 +36,7 @@ dependencies {
     )
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.squareup.retrofit2:retrofit:2.3.0'
+    compileOnly 'org.projectlombok:lombok:1.16.18'
 }
 
 uploadArchives {
