@@ -1,5 +1,6 @@
 package com.onua.blockchain.bitcoin;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 public class Transaction {
@@ -13,15 +14,25 @@ public class Transaction {
         this.privateKey = privateKey;
     }
 
-    public List<UTXO> getInputs() {
+    List<UTXO> getInputs() {
         return inputs;
     }
 
-    public List<UTXO> getOutputs() {
+    List<UTXO> getOutputs() {
         return outputs;
     }
 
-    public String getPrivateKey() {
+    String getPrivateKey() {
         return privateKey;
+    }
+
+    boolean isTransactionSettleable(List<UTXO> inputs, List<UTXO> outputs){
+        return getTotalDenomination(inputs).equals(getTotalDenomination(outputs));
+    }
+
+    private BigDecimal getTotalDenomination(List<UTXO> utxos){
+        return  utxos.stream().map(UTXO::getDenomination)
+                              .reduce(BigDecimal::add)
+                              .orElseGet(() -> new BigDecimal(0));
     }
 }
