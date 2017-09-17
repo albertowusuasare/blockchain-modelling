@@ -1,0 +1,45 @@
+group 'com.onua.blockchain'
+version '1.0-SNAPSHOT'
+description = 'A project for modelling block chain technologies in java'
+
+apply plugin: 'project-report'
+apply plugin: 'java'
+apply plugin: 'groovy'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+test {
+    testLogging {
+        showStandardStreams = true
+        events "PASSED", "STARTED", "FAILED", "SKIPPED"
+        afterSuite { desc, result ->
+            if (!desc.parent) {
+                println "Tests run: ${result.testCount}, Failures: ${result.failedTestCount}, " +
+                        "Skipped: ${result.skippedTestCount}"
+            }
+        }
+    }
+}
+
+
+dependencies {
+    testCompile(
+            'junit:junit:4.12',
+            'org.codehaus.groovy:groovy-all:2.4',
+            'org.spockframework:spock-core:1.1-groovy-2.4-rc-2'
+    )
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.squareup.retrofit2:retrofit:2.3.0'
+}
+
+uploadArchives {
+    repositories {
+        flatDir {
+            dirs 'repos'
+        }
+    }
+}
