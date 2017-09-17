@@ -1,2 +1,13 @@
 # blockchain-modelling
-A mapping of the whitepaper concepts of popular blockchain technologies to code
+A mapping of blockchain whitepaper to code.
+
+Implemented:
+- Bitcoin : https://github.com/ethereum/wiki/wiki/White-Paper
+
+To implmeneted:
+- Ethereum : https://github.com/ethereum/wiki/wiki/White-Paper
+- Golem : http://golemproject.net/doc/DraftGolemProjectWhitepaper.pdf
+- IOTA: https://iota.org/IOTA_Whitepaper.pdf
+
+
+
