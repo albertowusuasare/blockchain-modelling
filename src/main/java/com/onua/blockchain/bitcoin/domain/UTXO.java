@@ -1,4 +1,4 @@
-package com.onua.blockchain.bitcoin;
+package com.onua.blockchain.bitcoin.domain;
 
 import java.math.BigDecimal;
 
@@ -11,11 +11,11 @@ public class UTXO {
         this.denomination = denomination;
     }
 
-    String getOwnerPublicKey() {  return ownerPublicKey;  }
+    public String getOwnerPublicKey() {  return ownerPublicKey;  }
 
-    BigDecimal getDenomination() { return denomination; }
+    public BigDecimal getDenomination() { return denomination; }
 
-    boolean isOwnerValid(String ownerPublicKey){
+    public boolean isOwnerValid(String ownerPublicKey){
         throw new RuntimeException("Not yet Implemented");
     }
 

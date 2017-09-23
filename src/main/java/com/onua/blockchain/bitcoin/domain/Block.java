@@ -1,4 +1,4 @@
-package com.onua.blockchain.bitcoin;
+package com.onua.blockchain.bitcoin.domain;
 
 import lombok.*;
 

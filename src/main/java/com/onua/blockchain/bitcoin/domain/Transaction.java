@@ -1,4 +1,4 @@
-package com.onua.blockchain.bitcoin;
+package com.onua.blockchain.bitcoin.domain;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -14,19 +14,19 @@ public class Transaction {
         this.privateKey = privateKey;
     }
 
-    List<UTXO> getInputs() {
+    public List<UTXO> getInputs() {
         return inputs;
     }
 
-    List<UTXO> getOutputs() {
+    public List<UTXO> getOutputs() {
         return outputs;
     }
 
-    String getPrivateKey() {
+    public String getPrivateKey() {
         return privateKey;
     }
 
-    boolean isTransactionSettleable(List<UTXO> inputs, List<UTXO> outputs){
+    public boolean isTransactionSettleable(List<UTXO> inputs, List<UTXO> outputs){
         return getTotalDenomination(inputs).equals(getTotalDenomination(outputs));
     }
 

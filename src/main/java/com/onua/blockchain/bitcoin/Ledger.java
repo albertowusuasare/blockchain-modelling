@@ -1,5 +1,8 @@
 package com.onua.blockchain.bitcoin;
 
+import com.onua.blockchain.bitcoin.domain.Transaction;
+import com.onua.blockchain.bitcoin.domain.UTXO;
+
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;

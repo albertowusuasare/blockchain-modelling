@@ -1,6 +1,8 @@
 package com.onua.blockchain.bitcoin;
 
 
+import com.onua.blockchain.bitcoin.domain.Block;
+
 import java.security.Timestamp;
 
 public abstract class BlockValidator {
@@ -12,7 +14,7 @@ public abstract class BlockValidator {
                 isProofOfWorkValid(block);
     }
 
-    boolean isTimeStampValid(java.security.Timestamp currentBlockTimeStamp, Timestamp prevBlockTimeStamp){
+    boolean isTimeStampValid(Timestamp currentBlockTimeStamp, Timestamp prevBlockTimeStamp){
         throw new RuntimeException("Not yet implemented");
     }
 
