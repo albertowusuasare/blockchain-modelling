@@ -2,7 +2,7 @@
 A mapping of blockchain whitepaper to code.
 
 Implemented:
-- Bitcoin : https://github.com/ethereum/wiki/wiki/White-Paper
+- Bitcoin : https://github.com/ethereum/wiki/wiki/White-Paper or http://www.michaelnielsen.org/ddi/how-the-bitcoin-protocol-actually-works/
 
 To be implmeneted:
 - Ethereum : https://github.com/ethereum/wiki/wiki/White-Paper
