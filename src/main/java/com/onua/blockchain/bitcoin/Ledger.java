@@ -23,7 +23,7 @@ public class Ledger {
     }
 
     private boolean isTransactionValid(Transaction transaction){
-        return isInputValid(transaction.getInputs(), transaction.getPrivateKey()) &&
+        return isInputValid(transaction.getInputs(), transaction.getSenderSignature()) &&
                 transaction.isTransactionSettleable(transaction.getInputs(), transaction.getOutputs());
     }
 

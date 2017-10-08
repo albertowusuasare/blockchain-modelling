@@ -6,12 +6,12 @@ import java.util.List;
 public class Transaction {
     private final List<UTXO> inputs;
     private final List<UTXO> outputs;
-    private final String privateKey;
+    private final String senderSignature;
 
-    public Transaction(List<UTXO> inputs, List<UTXO> outputs, String privateKey){
+    public Transaction(List<UTXO> inputs, List<UTXO> outputs, String senderSignature){
         this.inputs = inputs;
         this.outputs = outputs;
-        this.privateKey = privateKey;
+        this.senderSignature = senderSignature;
     }
 
     public List<UTXO> getInputs() {
@@ -22,16 +22,16 @@ public class Transaction {
         return outputs;
     }
 
-    public String getPrivateKey() {
-        return privateKey;
+    public String getSenderSignature() {
+        return senderSignature;
     }
 
     public boolean isTransactionSettleable(List<UTXO> inputs, List<UTXO> outputs){
         return getTotalDenomination(inputs).equals(getTotalDenomination(outputs));
     }
 
-    private BigDecimal getTotalDenomination(List<UTXO> utxos){
-        return  utxos.stream().map(UTXO::getDenomination)
+    private BigDecimal getTotalDenomination(List<UTXO> unspentTransactions){
+        return  unspentTransactions.stream().map(UTXO::getDenomination)
                               .reduce(BigDecimal::add)
                               .orElseGet(() -> new BigDecimal(0));
     }

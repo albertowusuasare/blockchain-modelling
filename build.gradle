@@ -44,6 +44,7 @@ dependencies {
     compile 'com.fasterxml.jackson.core:jackson-databind:2.8.7'
     compile 'com.fasterxml.jackson.core:jackson-databind:2.8.7'
     compile 'com.fasterxml.jackson.core:jackson-annotations:2.8.7'
+    compile group: 'com.google.guava', name: 'guava', version: '22.0'
 }
 
 uploadArchives {

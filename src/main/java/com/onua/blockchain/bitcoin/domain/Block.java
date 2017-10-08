@@ -11,6 +11,7 @@ import java.util.List;
 public class Block {
     private String nonce;
     private Timestamp timestamp;
-    private Block prevBlock;
+    private Hash prevBlockHash;
     private List<Transaction> transactions;
+    private Hash blockHash;
 }
